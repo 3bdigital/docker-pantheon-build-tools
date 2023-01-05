@@ -1,12 +1,20 @@
 FROM 3bdigital/ci-tools:alpine
 
+WORKDIR /root/
+
 # Add PHP and Node
 RUN apk update \
- && apk upgrade \
  && apk add --no-cache \
             php \
             php-dom \
+            php-gd \
+            php-pdo \
+            php-session \
+            php-simplexml \
+            php-tokenizer \
             php-xml \
+            php-xmlreader \
+            php-xmlwriter \
             composer \
             npm \
  && rm -rf /var/cache/apk/*

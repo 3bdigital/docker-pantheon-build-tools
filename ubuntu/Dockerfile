@@ -1,14 +1,18 @@
 FROM 3bdigital/ci-tools:ubuntu
 
+WORKDIR /root/
+
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Add PHP and Node
 RUN apt-get update \
- && apt-get upgrade \
  && apt-get install -y software-properties-common \
  && add-apt-repository ppa:ondrej/php \
  && apt-get install -y \
             php8.1 \
+            php8.1-gd \
+            php8.1-intl \
+            php8.1-mbstring \
             php8.1-xml \
             composer \
             npm \
