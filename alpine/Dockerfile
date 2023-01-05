@@ -11,9 +11,6 @@ RUN apk update \
             npm \
  && rm -rf /var/cache/apk/*
 
-RUN php -v && sleep 10
-RUN php -m && sleep 10
-
 # Install Terminus
 RUN mkdir -p ~/terminus \
   && cd ~/terminus \
